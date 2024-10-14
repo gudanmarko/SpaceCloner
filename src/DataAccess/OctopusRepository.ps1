@@ -294,7 +294,7 @@ function Get-OctopusProjectRunbookList
         return @()
     }
 
-    return Get-OctopusApiItemList -EndPoint "projects/$($project.Id)/runbooks" -ApiKey $octopusData.OctopusApiKey -OctopusUrl $octopusData.OctopusUrl -SpaceId $octopusData.SpaceId
+    return Get-OctopusApiItemList -EndPoint "projects/$($project.Id)/runbooks?skip=0&take=1000" -ApiKey $octopusData.OctopusApiKey -OctopusUrl $octopusData.OctopusUrl -SpaceId $octopusData.SpaceId
 }
 
 function Get-OctopusRunbookProcess
